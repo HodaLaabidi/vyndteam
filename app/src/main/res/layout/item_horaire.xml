@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/item_horaire"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_day"
+                android:fontFamily="@fonts/Lato-Regular"
+                android:textSize="16dp"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lundi"
+                android:textColor="@color/blackTextColor" />
+            <Switch
+                android:layout_alignParentRight="true"
+                android:layout_width="50dp"
+                android:id="@+id/switch_horaire"
+                android:theme="@style/SwitchTheme"
+                android:layout_height="24dp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingBottom="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/time_deb"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:text="--:--"
+            android:background="@drawable/rounded_horaire_border"
+            android:textColor="@color/grey_text_color"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="4"/>
+
+        <TextView
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="à"
+            android:textColor="@color/grey_text_color"/>
+        <TextView
+            android:id="@+id/time_fin"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:text="--:--"
+            android:background="@drawable/rounded_horaire_border"
+            android:textColor="@color/grey_text_color"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="4"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingBottom="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/time_deb2"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:text="--:--"
+            android:background="@drawable/rounded_horaire_border"
+            android:textColor="@color/grey_text_color"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="4"/>
+        <TextView
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="à"
+            android:textColor="@color/grey_text_color"/>
+        <TextView
+            android:id="@+id/time_fin2"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:text="--:--"
+            android:background="@drawable/rounded_horaire_border"
+            android:textColor="@color/grey_text_color"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="4"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_2"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/gray_4"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_2"/>
+</LinearLayout>

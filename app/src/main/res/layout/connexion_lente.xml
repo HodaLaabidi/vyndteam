@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp">
+    <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="16sp"
+    android:textColor="@color/gray_2"
+    android:text="@string/dialog_title_slow_connection"
+    app:fonttype="bold"
+    android:layout_gravity="center"/>
+    <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/dialog_message_slow_connection"
+        android:gravity="center"
+        app:fonttype="regular"
+        android:layout_gravity="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_my_position"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_above="@+id/layout_active_gps"
+        >
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shapewithblueborder"
+            android:layout_alignParentRight="true"
+
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:paddingLeft="17dp"
+            android:paddingRight="17dp"
+            android:paddingTop="10dp"
+            android:id="@+id/rl_retry"
+            android:paddingBottom="5dp">
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_centerInParent="true"
+
+                android:textColor="@color/blue"
+                app:fonttype="regular"
+                android:text="Réessayer" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

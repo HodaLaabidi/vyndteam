@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bleuc"
+    android:paddingTop="19dp"
+    android:paddingBottom="6dp"
+    android:foreground="?attr/selectableItemBackground">
+    <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/iv_remove_categorie"
+        android:visibility="gone"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/delete_menu"/>
+    <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+        android:id="@+id/tv_categorie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/categorie"
+        android:layout_toRightOf="@+id/iv_remove_categorie"
+        android:textSize="12sp"
+        android:textAllCaps="true"
+        app:fonttype="bold"
+        android:textColor="@color/gray_2"
+        android:layout_marginLeft="7dp"/>
+    <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+        android:id="@+id/tv_categorie_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/update_titre_categorie"
+        android:textSize="12sp"
+        android:textAllCaps="true"
+        android:textAlignment="textEnd"
+        android:layout_toRightOf="@+id/tv_categorie"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        app:fonttype="bold"
+
+        android:textColor="@color/colorPrimary"
+        android:layout_marginLeft="16dp"
+        android:gravity="end" />
+
+</RelativeLayout>

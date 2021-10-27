@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_login"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:layout_gravity="center_horizontal">
+<LinearLayout
+    android:id="@+id/ln_menu"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:layout_below="@+id/rl_item_business"
+
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/rl_txt_menu"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/lbl_txt_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/text"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary" />
+
+        <View
+            android:id="@+id/view_txt_menu"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_alignParentBottom="true"
+
+            android:background="@color/teal_color"></View>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_photo_menu"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/shaperel">
+
+        <TextView
+            android:id="@+id/lbl_photo_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/photoo"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="17sp"
+            />
+
+        <View
+            android:id="@+id/view_photo_menu"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/teal_color"
+            android:visibility="gone"></View>
+    </RelativeLayout>
+</LinearLayout>
+
+
+</LinearLayout>

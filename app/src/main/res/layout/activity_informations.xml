@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:chip="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_infos"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.vyndsolutions.vyndteam.activities.InformationsActivity">
+    <RelativeLayout
+        android:id="@+id/rl_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/return_info"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="15dp"
+            android:src="@drawable/ic_return" />
+
+        <TextView
+            android:layout_width="117dp"
+            android:layout_height="24dp"
+            android:layout_centerInParent="true"
+            android:fontFamily="fonts/Lato-Regular"
+            android:gravity="center"
+            android:text="Informations"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nested_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_toolbar">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_0"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="10dp"
+                android:text="@string/information"
+                android:textAllCaps="true"
+                android:textColor="@color/gray_2"
+                android:textSize="12sp"
+                app:fonttype="bold" />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_principal_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_0" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_important_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_0"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="10dp"
+                android:text="@string/label_recommended_for"
+                android:textAllCaps="true"
+                android:textColor="@color/gray_2"
+                android:textSize="12sp"
+                app:fonttype="bold" />
+            <com.plumillonforge.android.chipview.ChipView
+                android:id="@+id/cv_recommended_for"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="17dp"
+                chip:chip_background="@color/white"
+                chip:chip_background_selected="@color/blue_info"
+                chip:chip_corner_radius="6dp"
+                chip:chip_line_spacing="20dp"
+                chip:chip_padding="10dp"
+                chip:chip_side_padding="10dp"
+                chip:chip_spacing="16dp"
+                chip:layout_marginVertical="10dp" />
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_0"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="10dp"
+                android:text="@string/label_good_for"
+                android:textAllCaps="true"
+                android:textColor="@color/gray_2"
+                android:textSize="12sp"
+                app:fonttype="bold" />
+            <com.plumillonforge.android.chipview.ChipView
+                android:id="@+id/cv_good_for"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="17dp"
+                chip:chip_background="@color/deep_orange"
+                chip:chip_background_selected="@color/blue_grey"
+                chip:chip_corner_radius="6dp"
+                chip:chip_line_spacing="20dp"
+                chip:chip_padding="10dp"
+                chip:chip_side_padding="10dp"
+                chip:chip_spacing="16dp"
+                chip:layout_marginVertical="10dp" />
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray_0"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="10dp"
+                android:text="@string/tags"
+                android:textAllCaps="true"
+                android:textColor="@color/gray_2"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:fonttype="bold" />
+            <com.plumillonforge.android.chipview.ChipView
+                android:id="@+id/cv_tags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="17dp"
+                android:visibility="gone"
+                chip:chip_background="@color/deep_orange"
+                chip:chip_background_selected="@color/blue_grey"
+                chip:chip_corner_radius="6dp"
+                chip:chip_line_spacing="20dp"
+                chip:chip_padding="10dp"
+                chip:chip_side_padding="10dp"
+                chip:chip_spacing="16dp"
+                chip:layout_marginVertical="10dp" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+    <LinearLayout
+        android:id="@+id/layout_no_internet_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/error_loading" />
+        <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:gravity="center"
+            android:text="@string/chargement_gerer"
+            android:textSize="14sp"
+            app:fonttype="bold" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:gravity="center">
+            <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                android:id="@+id/iv_arrow_loading_accueil"
+                android:layout_width="16dp"
+
+                android:layout_height="16dp"
+                android:background="@drawable/arrow_loading" />
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/iv_arrow_loading_accueil"
+                android:text="@string/ressayer"
+                android:textSize="14sp"
+
+                app:fonttype="regular" />
+        </RelativeLayout>
+    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>

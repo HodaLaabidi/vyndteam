@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/gray_0"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+tools:context="com.vyndsolutions.vyndteam.activities.UpdateActivity">
+
+<android.support.v7.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:background="@color/colorPrimary">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:baselineAligned="false"
+        >
+
+        <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+            android:id="@+id/iv_back"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:layout_centerVertical="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:src="@drawable/ic_return" />
+        <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingTop="5dp"
+            android:text="@string/terminer"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textAllCaps="true"
+            android:layout_alignParentRight="true"
+            android:textSize="16sp"
+            app:fonttype="regular"
+            android:id="@+id/tv_terminer"/>
+
+
+
+
+    </RelativeLayout>
+</android.support.v7.widget.Toolbar>
+<android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/nested_edit"
+    android:layout_below="@+id/toolbar">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingTop="10dp"
+            android:id="@+id/layout_commerce_name"
+            android:paddingBottom="10dp"
+            android:foreground="?attr/selectableItemBackground">
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="@string/label_nom"
+                android:layout_centerVertical="true"
+                android:id="@+id/lbl_business_name"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="16dp"
+                app:fonttype="regular"/>
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@+id/lbl_business_name"
+                android:layout_marginLeft="15dp"
+                android:hint="@string/lbl_nom_commerce"
+                android:layout_marginRight="5dp"
+                android:textColorHint="@color/gray_2"
+                android:layout_toLeftOf="@+id/ic_name"
+                android:id="@+id/commerceName"/>
+            <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:id="@+id/ic_name"
+                android:src="@drawable/text_warning"/>
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingTop="10dp"
+            android:id="@+id/layout_commerce_region"
+            android:paddingBottom="10dp"
+            android:foreground="?attr/selectableItemBackground">
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="@string/label_region"
+                android:layout_centerVertical="true"
+                android:id="@+id/lbl_business_region"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="16dp"
+                app:fonttype="regular"/>
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColorHint="@color/gray_2"
+                android:background="@android:color/transparent"
+                android:layout_toLeftOf="@+id/ic_region"
+                android:layout_centerVertical="true"
+                android:textColor="@color/blue_light_color"
+                android:layout_toRightOf="@+id/lbl_business_region"
+                android:layout_marginLeft="15dp"
+                android:hint="Région du commerce"
+                android:layout_marginRight="5dp"
+                android:id="@+id/commerceregion"/>
+            <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:id="@+id/ic_region"
+                android:src="@drawable/text_warning"/>
+
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingTop="10dp"
+            android:id="@+id/layout_commerce_categorie"
+            android:paddingBottom="10dp"
+            android:foreground="?attr/selectableItemBackground">
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="@string/label_categorie"
+                android:layout_centerVertical="true"
+                android:id="@+id/lbl_business_categorie"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="16dp"
+                app:fonttype="regular"/>
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:textColorHint="@color/gray_2"
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+                android:layout_toLeftOf="@+id/ic_categorie"
+                android:layout_centerVertical="true"
+                android:textColor="@color/blue_light_color"
+                android:layout_toRightOf="@+id/lbl_business_categorie"
+                android:layout_marginLeft="15dp"
+                android:hint="Catégorie du commerce"
+                android:layout_marginRight="5dp"
+                android:id="@+id/commercecategorie"/>
+            <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:id="@+id/ic_categorie"
+                android:src="@drawable/text_warning"/>
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingTop="10dp"
+            android:id="@+id/layout_commerce_beerprice"
+            android:paddingBottom="10dp"
+            android:foreground="?attr/selectableItemBackground">
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="@string/label_biere"
+                android:layout_centerVertical="true"
+                android:id="@+id/lbl_business_beerprice"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="16dp"
+                app:fonttype="regular"/>
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:inputType="number"
+                android:textColorHint="@color/gray_2"
+                android:background="@android:color/transparent"
+                android:layout_toLeftOf="@+id/ic_price"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@+id/lbl_business_beerprice"
+                android:layout_marginLeft="15dp"
+                android:hint="Prix de la bière"
+                android:layout_marginRight="5dp"
+                android:id="@+id/commercebeerprice"/>
+            <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:id="@+id/ic_price"
+                android:src="@drawable/text_warning"/>
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+            <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/icon_business_default"
+                android:id="@+id/iv_profile"/>
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@+id/iv_profile"
+                android:layout_marginLeft="15dp"
+                android:text="Photo du profil"
+                android:layout_toLeftOf="@+id/ic_profile"
+                android:layout_marginRight="5dp"
+                android:id="@+id/lbl_profile_image"/>
+            <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:id="@+id/ic_profile"
+                android:src="@drawable/text_warning"/>
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@color/white"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+            <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/icon_business_default"
+                android:id="@+id/iv_cover"/>
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+                android:layout_toLeftOf="@+id/ic_couverture"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@+id/iv_cover"
+                android:layout_marginLeft="15dp"
+                android:text="Photo de couverture"
+                android:layout_marginRight="5dp"
+                android:id="@+id/lbl_cover_image"/>
+            <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:id="@+id/ic_couverture"
+                android:src="@drawable/text_warning"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+                android:layout_toLeftOf="@+id/ic_location"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+
+                android:layout_marginLeft="16dp"
+                android:text="Adresse et localisation"
+                android:layout_marginRight="5dp"
+                android:id="@+id/lbl_location"/>
+            <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:id="@+id/ic_location"
+                android:src="@drawable/text_warning"/>
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:id="@+id/layout_image_gallerie">
+
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:layout_toLeftOf="@+id/ic_gallerie"
+                android:layout_marginLeft="16dp"
+                android:text="Gallerie de photos"
+                android:layout_marginRight="5dp"
+                android:id="@+id/lbl_gallerie"/>
+            <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+
+                android:layout_marginRight="16dp"
+                android:id="@+id/ic_gallerie"
+                android:src="@drawable/text_warning"/>
+
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_nbr_photo"
+                android:textColor="@color/black"
+                android:layout_toLeftOf="@+id/ic_gallerie"
+                android:textSize="16sp"
+                android:visibility="gone"
+                tools:text="5"
+
+                android:layout_marginRight="5dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:id="@+id/layout_horaire">
+
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:layout_toLeftOf="@+id/ic_horaire"
+                android:layout_marginLeft="16dp"
+                android:text="Horaires"
+                android:layout_marginRight="5dp"
+                android:id="@+id/lbl_horaire"/>
+            <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:id="@+id/ic_horaire"
+                android:src="@drawable/text_warning"/>
+
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_1"
+            android:orientation="vertical"></LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:id="@+id/layout_happy_hour">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:layout_toLeftOf="@+id/ic_happy_hour"
+                android:layout_marginLeft="16dp"
+                android:text="@string/happyhours"
+                android:layout_marginRight="16dp"
+                android:id="@+id/lbl_happy_hour"/>
+            <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/text_warning"
+                android:id="@+id/ic_happy_hour"
+                />
+
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:id="@+id/layout_menu">
+
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:layout_toLeftOf="@+id/ic_menu"
+                android:layout_marginLeft="16dp"
+                android:text="@string/menu"
+                android:layout_marginRight="5dp"
+                android:id="@+id/lbl_menu"/>
+            <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:id="@+id/ic_menu"
+                android:src="@drawable/text_warning"/>
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_1"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:id="@+id/layout_informations">
+
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:layout_toLeftOf="@+id/ic_info_supp"
+                android:layout_marginLeft="16dp"
+                android:text="@string/info_supp"
+                android:layout_marginRight="5dp"
+                android:id="@+id/lbl_information_supplementaire"/>
+            <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:id="@+id/ic_info_supp"
+                android:src="@drawable/text_warning"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingTop="10dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/layout_commerce_phone"
+            android:paddingBottom="10dp"
+            android:foreground="?attr/selectableItemBackground">
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="@string/label_phone"
+                android:layout_centerVertical="true"
+                android:id="@+id/lbl_business_phone"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="16dp"
+                app:fonttype="regular"/>
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@+id/lbl_business_phone"
+                android:layout_marginLeft="15dp"
+                android:hint="+216 xx xxx xxx"
+                android:textColorHint="@color/gray_2"
+                android:layout_toLeftOf="@+id/ic_phone"
+                android:layout_marginRight="5dp"
+                android:id="@+id/commercePhone"/>
+            <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:id="@+id/ic_phone"
+                android:src="@drawable/text_warning"/>
+
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingTop="10dp"
+
+            android:id="@+id/layout_commerce_postal"
+            android:paddingBottom="10dp"
+            android:foreground="?attr/selectableItemBackground">
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="@string/label_code_postal"
+                android:layout_centerVertical="true"
+                android:id="@+id/lbl_business_postal"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="16dp"
+                app:fonttype="regular"/>
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:background="@android:color/transparent"
+
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@+id/lbl_business_postal"
+                android:layout_marginLeft="15dp"
+                android:hint="xxxx"
+                android:textColorHint="@color/gray_2"
+                android:layout_toLeftOf="@+id/ic_postal"
+                android:layout_marginRight="5dp"
+                android:id="@+id/commercePostal"/>
+            <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:id="@+id/ic_postal"
+                android:src="@drawable/text_warning"/>
+
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_1"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingTop="10dp"
+
+            android:id="@+id/layout_commerce_description"
+            android:paddingBottom="10dp"
+            android:foreground="?attr/selectableItemBackground">
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="@string/label_description"
+                android:layout_centerVertical="true"
+                android:id="@+id/lbl_business_description"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="16dp"
+                app:fonttype="regular"/>
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:background="@android:color/transparent"
+                android:layout_toLeftOf="@+id/ic_description"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@+id/lbl_business_description"
+                android:layout_marginLeft="15dp"
+                android:hint="Description"
+                android:textColorHint="@color/gray_2"
+                android:layout_marginRight="5dp"
+                android:id="@+id/commerceDescription"/>
+            <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:id="@+id/ic_description"
+                android:src="@drawable/text_warning"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_centerInParent="true"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:visibility="gone"
+    android:id="@+id/layout_no_internet_edit">
+    <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/error_loading"
+        android:layout_gravity="center"/>
+    <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:fonttype="bold"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="@string/chargement_gerer"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:gravity="center">
+        <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+
+            android:background="@drawable/arrow_loading"
+            android:id="@+id/iv_arrow_loading_accueil"/>
+        <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_arrow_loading_accueil"
+            android:layout_marginLeft="5dp"
+            app:fonttype="regular"
+            android:textSize="14sp"
+
+            android:text="@string/ressayer"/>
+    </RelativeLayout>
+</LinearLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/toolbar"
+    android:background="@color/transparent_black_1"
+    android:id="@+id/layout_loading"
+    android:visibility="gone">
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>
+
+</RelativeLayout>
+

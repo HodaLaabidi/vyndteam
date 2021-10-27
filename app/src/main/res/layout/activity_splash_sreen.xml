@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/splash_layout"
+    android:background="@drawable/bg_splashscreen_teams">
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:weightSum="3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:scaleType="fitCenter"
+            android:layout_height="match_parent"
+            android:src="@drawable/vyndteamlogo"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/text_splash_sreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Made with "
+            android:textColor="@color/colorWhiteText"
+            android:textSize="14sp"/>
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_heart_white"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" in Tunis"
+            android:textSize="14sp"
+            android:textColor="@color/colorWhiteText"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

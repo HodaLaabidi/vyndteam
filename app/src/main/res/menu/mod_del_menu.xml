@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        app:actionLayout="@layout/item_modif_menu"
+        android:background="#fff"
+        android:id="@+id/mod"
+        android:title="Modifier" ></item>
+    <item app:actionLayout="@layout/item_del_menu"
+        android:background="#fff"
+        android:id="@+id/del"
+        android:title="Supprimer" ></item>
+
+</menu>

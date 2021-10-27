@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LatoTextView">
+        <attr name="fonttype" format="string">
+            <enum name="regular" value="0" />
+            <enum name="semiBold" value="1" />
+            <enum name="light" value="2" />
+            <enum name="medium" value="3" />
+            <enum name="bold" value="4" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="DinTextView">
+        <attr name="fonttypedin" format="string">
+            <enum name="bold" value="0" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="SanchezTextView">
+        <attr name="fonttypesanchez" format="string">
+            <enum name="regular" value="0" />
+            <enum name="regularit" value="1" />
+
+        </attr>
+    </declare-styleable>
+</resources>

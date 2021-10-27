@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.vyndsolutions.vyndteam.activities.HomeActivity">
+
+
+    <LinearLayout
+        android:id="@+id/layout_main_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_bar" />
+        
+        <LinearLayout
+            android:id="@+id/search_layout"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="#B2381A"
+            android:gravity="center_horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/keyword1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Restaurant " />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" à " />
+
+            <TextView
+                android:id="@+id/keyword2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grand Tunis" />
+        </LinearLayout>
+         <RelativeLayout
+             android:layout_width="match_parent"
+             android:layout_height="25dp"
+             android:visibility="gone"
+             android:id="@+id/layout_all_commerce"
+             android:background="@color/red_color">
+             <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                 android:id="@+id/tv_keyword"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textColor="@color/white"
+                 app:fonttype="bold"
+                 android:layout_centerInParent="true"
+                 android:text="@string/allCommerce"
+                 android:textSize="12sp"/>
+         </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/layout_proximite"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="40dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Recherche à proximité"
+                android:textColor="#808B9E"
+                tools:fontFamily="@font/sanchez" />
+
+            <Switch
+                android:id="@+id/switch_proximite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:checked="false"
+                android:clickable="false"
+                android:theme="@style/SwitchTheme" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/backgrountItemColor" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:indeterminateTint="@color/colorPrimary"
+            android:indeterminateTintMode="src_in" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_search_result"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.vyndsolutions.vyndteam.widgets.images.EmptyDataLayout
+                android:id="@+id/empty_data_layout"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+    <!--layout search autocomplete-->
+    <RelativeLayout
+        android:id="@+id/layout_search_autocomplete"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <include
+            android:id="@+id/layout_loading_search_autocomplete"
+            layout="@layout/loading_layout" />
+
+        <RelativeLayout
+            android:id="@+id/layout_search_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:paddingBottom="12dp"
+            android:paddingTop="12dp">
+
+            <ImageView
+                android:id="@+id/iv_search_back"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="10dp"
+                android:paddingBottom="6dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:paddingTop="2dp"
+                android:src="@drawable/ic_back" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_autocomplete_search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_toRightOf="@id/iv_search_back"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="4dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="5dp">
+
+
+                    <com.vyndsolutions.vyndteam.utils.TextStyle.LatoEditText
+                        android:id="@+id/et_search_autocomplete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignEnd="@+id/iv_cancel_search_autocomplete"
+                        android:layout_alignRight="@+id/iv_cancel_search_autocomplete"
+                        android:layout_centerVertical="true"
+                        android:background="@color/white"
+                        android:hint="@string/hint_autocomplete_search"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray_2"
+                        android:textCursorDrawable="@null"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/iv_cancel_search_autocomplete"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/ic_cancel"
+                        android:visibility="gone" />
+
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_autocomplete_region_bar"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_alignLeft="@id/card_autocomplete_search_bar"
+                android:layout_below="@id/card_autocomplete_search_bar"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="4dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="4dp">
+
+                <RelativeLayout
+                    android:id="@+id/layout_region_search_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@color/white">
+
+
+                    <com.vyndsolutions.vyndteam.utils.TextStyle.LatoEditText
+                        android:id="@+id/et_region_search_autocomplete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@color/white"
+                        android:hint="@string/hint_autocomplete_region"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray_2"
+                        android:textCursorDrawable="@null"
+                        android:textSize="14sp" />/>
+
+                    <ImageView
+                        android:id="@+id/iv_cancel_region_autocomplete"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/ic_cancel"
+                        android:visibility="gone" />
+
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
+        <!--layout region autocomplete -->
+        <RelativeLayout
+            android:id="@+id/layout_region_autocomplete_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/layout_search_header"
+            android:background="@color/white"
+            android:visibility="visible">
+
+            <include
+                android:id="@+id/layout_loading_region_autocomplete"
+                layout="@layout/loading_layout" />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_region_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible" />
+
+            <!--layout no regions-->
+            <LinearLayout
+                android:id="@+id/layout_no_regions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rv_region_list"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="14dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/no_result_found" />
+
+                <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/region_not_found" />
+            </LinearLayout>
+        </RelativeLayout>
+        <!--layout business/catégorie autocomplete -->
+        <RelativeLayout
+            android:id="@+id/layout_search_autocomplete_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/layout_search_header"
+            android:visibility="gone">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_search_autocomplete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white" />
+
+            <!--layout no business/catégorie-->
+            <LinearLayout
+                android:id="@+id/layout_autocomplete_no_results"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rv_search_autocomplete"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="14dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/no_result_found" />
+
+                <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_result_found" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

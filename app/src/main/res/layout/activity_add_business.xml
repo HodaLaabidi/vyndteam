@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.vyndsolutions.vyndteam.activities.AddBusinessActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:id="@+id/layout_top"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/creer"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:fontFamily="@fonts/Lato-Regular"
+            android:text="créer"
+            android:textAllCaps="true"
+            android:textColor="@color/text_white_color"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/icon_return"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/ic_return" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_top"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="39dp">
+
+                <TextView
+                    android:id="@+id/nom"
+                    android:layout_width="70dp"
+                    android:layout_height="39dp"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@fonts/Lato-Regular"
+                    android:gravity="center_vertical"
+                    android:text="Nom"
+                    android:textColor="@color/blackTextColor"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/ajout_nom_commerce"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="31dp"
+                    android:layout_toLeftOf="@+id/iv_nom"
+                    android:layout_toRightOf="@id/nom"
+                    android:fontFamily="@fonts/Lato-Regular"
+                    android:gravity="center_vertical"
+                    android:hint="Nom du commerce"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/gray_2"
+                    android:textSize="16sp"
+                    android:theme="@style/Theme.App.Edittext" />
+
+                <ImageView
+                    android:id="@+id/iv_nom"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="19dp"
+                    android:src="@drawable/text_warning_icon" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_line"
+                android:orientation="vertical"></LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_region"
+                android:layout_width="match_parent"
+                android:layout_height="39dp">
+
+                <TextView
+                    android:id="@+id/region"
+                    android:layout_width="70dp"
+                    android:layout_height="39dp"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@fonts/Lato-Regular"
+                    android:gravity="center_vertical"
+                    android:text="Région  "
+                    android:textColor="@color/blackTextColor"
+                    android:textSize="16sp" />
+
+                <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                    android:id="@+id/et_region"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="35dp"
+                    android:layout_toLeftOf="@+id/iv_region"
+                    android:layout_toRightOf="@id/region"
+                    android:editable="false"
+                    android:fontFamily="@fonts/Lato-Regular"
+                    android:gravity="center_vertical"
+                    android:hint="Région"
+                    android:inputType="none"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/gray_2"
+                    android:textSize="16sp"
+                    android:theme="@style/Theme.App.Edittext" />
+
+                <ImageView
+                    android:id="@+id/iv_region"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="19dp"
+                    android:src="@drawable/text_warning_icon" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_line"
+                android:orientation="vertical" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list_region"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_line"
+                android:orientation="vertical" />
+
+            <RelativeLayout
+                android:id="@+id/rl_subcategories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical">
+
+                <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                    android:id="@+id/categorie"
+                    android:layout_width="70dp"
+                    android:layout_height="39dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@fonts/Lato-Regular"
+                    android:gravity="center_vertical"
+                    android:text="Catégorie"
+                    android:textColor="@color/blackTextColor"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_add_categories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/categorie"
+                    android:gravity="center_vertical"
+                    android:visibility="gone">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_add_categories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                    android:id="@+id/et_categories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="39dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_toLeftOf="@+id/iv_categorie"
+                    android:layout_toRightOf="@id/categorie"
+                    android:editable="false"
+                    android:fontFamily="@fonts/Lato-Regular"
+                    android:gravity="center_vertical"
+                    android:hint="Choisir des catégories"
+                    android:inputType="none"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/gray_2"
+                    android:textSize="16sp"
+                    android:theme="@style/Theme.App.Edittext"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/iv_categorie"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="19dp"
+                    android:src="@drawable/text_warning_icon" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_commerce_beerprice"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground"
+
+                android:paddingTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey_line"
+                    android:orientation="vertical" />
+
+                <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                    android:id="@+id/lbl_business_beerprice"
+                    android:layout_width="70dp"
+                    android:layout_height="39dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/label_biere"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:fonttype="regular" />
+
+                <com.vyndsolutions.vyndteam.utils.TextStyle.LatoEditText
+                    android:id="@+id/et_beer_price"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="39dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_centerVertical="true"
+
+                    android:layout_toLeftOf="@+id/ic_price"
+                    android:layout_toRightOf="@id/lbl_business_beerprice"
+                    android:fontFamily="@fonts/Lato-Regular"
+                    android:gravity="center_vertical"
+                    android:hint="@string/price"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/colorPrimary"
+
+                    android:textColorHint="@color/gray_2"
+                    android:textSize="16sp"
+                    android:theme="@style/Theme.App.Edittext"
+                    android:visibility="visible" />
+
+                <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                    android:id="@+id/ic_price"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="19dp"
+                    android:src="@drawable/text_warning_icon" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_line"
+                android:orientation="horizontal" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list_categories"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_line"
+                android:orientation="horizontal" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="@color/gray_4"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_line"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:id="@+id/layout_profil_photo"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:layout_gravity="center_vertical">
+
+
+                    <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                        android:id="@+id/iv_profil_photo"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:src="@drawable/ic_add_photo_grey" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="39dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="13dp"
+                    android:layout_weight="2"
+                    android:id="@+id/lbl_profile"
+                    android:fontFamily="@fonts/Lato-Regular"
+                    android:gravity="center_vertical"
+                    android:text="Photo du profil"
+                    android:textColor="#B1BAC4 " />
+
+                <ImageView
+                    android:id="@+id/iv_photo_profil_icon"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="19dp"
+                    android:src="@drawable/text_warning_icon" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_line"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_cover_photo"
+                android:layout_width="match_parent"
+                android:layout_height="61dp">
+
+
+                    <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                        android:id="@+id/iv_photo_cover"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:src="@drawable/ic_add_photo_grey" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="39dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="13dp"
+                    android:layout_weight="2"
+                    android:fontFamily="@fonts/Lato-Regular"
+                    android:gravity="center_vertical"
+                    android:id="@+id/lbl_couverture"
+                    android:text="Photo de couverture"
+                    android:textColor="#B1BAC4 " />
+
+                <ImageView
+                    android:id="@+id/iv_photo_cover_icon"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="19dp"
+                    android:src="@drawable/text_warning_icon" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_line"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="@color/gray_4"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_line"
+                android:orientation="horizontal" />
+
+            <RelativeLayout
+                android:id="@+id/adress_layout"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@fonts/Lato-Regular"
+                    android:gravity="center_vertical"
+                    android:text="Adresse et localisation"
+                    android:textColor="#363636 " />
+
+                <ImageView
+                    android:id="@+id/warning_address"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="19dp"
+                    android:src="@drawable/text_warning_icon" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#B1BAC4 "
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_gallerie"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="39dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="3"
+                    android:fontFamily="@fonts/Lato-Regular"
+                    android:gravity="center_vertical"
+                    android:text="Gallerie de photos"
+                    android:textColor="#363636 " />
+
+
+                <TextView
+                    android:id="@+id/nbre_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center_vertical"
+                    android:visibility="gone"
+                    android:layout_marginRight="24dp"
+                    android:text="0"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp" />
+                <ImageView
+                    android:id="@+id/ic_gallerie"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="19dp"
+                    android:src="@drawable/text_warning_icon" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_line"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="@color/gray_4"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_line"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:id="@+id/ll_horaires"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="39dp"
+                    android:layout_weight="3"
+
+                    android:fontFamily="@fonts/Lato-Regular"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Horaires"
+                    android:textColor="#363636 " />
+
+                <ImageView
+                    android:id="@+id/warning_horaires"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="19dp"
+                    android:src="@drawable/text_warning_icon" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#B1BAC4 "
+                android:orientation="vertical"></LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:id="@+id/layout_happy_hour">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@android:color/transparent"
+
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"
+                    android:layout_toLeftOf="@+id/ic_happy_hour"
+                    android:layout_marginLeft="16dp"
+                    android:text="@string/happyhours"
+
+
+
+                    android:id="@+id/lbl_happy_hour"/>
+                <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="19dp"
+                    android:src="@drawable/text_warning_icon"
+                    android:id="@+id/ic_happy_hour"
+                    />
+
+
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#B1BAC4 "
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_menu"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="39dp"
+                    android:layout_weight="3"
+                    android:fontFamily="@fonts/Lato-Regular"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Menu"
+                    android:textColor="#363636 " />
+
+                <ImageView
+                    android:id="@+id/warning_menu"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="19dp"
+                    android:src="@drawable/text_warning_icon" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#B1BAC4 "
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/informations"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="39dp"
+                    android:layout_weight="3"
+                    android:fontFamily="@fonts/Lato-Regular"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="informations supplémentaire"
+                    android:textColor="#363636 " />
+
+                <ImageView
+                    android:id="@+id/warning_infos"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="19dp"
+                    android:src="@drawable/text_warning_icon" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_line"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="@color/gray_4"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_line"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="39dp"
+                    android:layout_weight="2"
+                    android:fontFamily="@fonts/Lato-Regular"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Téléphone"
+                    android:textColor="#363636 "
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:id="@+id/tel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:fontFamily="@fonts/Lato-Regular"
+                    android:hint="+216 xx xxx xxx"
+                    android:inputType="phone"
+                    android:textColorHint="#B1BAC4 "
+                    android:textSize="16dp"
+                    android:theme="@style/Theme.App.Edittext"></EditText>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#B1BAC4 "
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="39dp"
+                    android:layout_weight="2"
+                    android:fontFamily="@fonts/Lato-Regular"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Code postal"
+                    android:textColor="#363636 "
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:id="@+id/code_postal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:hint="xxxx"
+                    android:inputType="number"
+                    android:textColorHint="#B1BAC4 "
+                    android:textSize="16dp"
+                    android:theme="@style/Theme.App.Edittext" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#B1BAC4 "
+                android:orientation="horizontal"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="39dp"
+                    android:layout_weight="2"
+                    android:fontFamily="@fonts/Lato-Regular"
+                    android:gravity="center_vertical"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="16dp"
+                    android:text="Description"
+                    android:textColor="#363636 "
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:id="@+id/description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@fonts/Lato-Regular"
+                    android:hint="Description"
+                    android:layout_weight="3"
+                    android:textColorHint="#B1BAC4 "
+                    android:textSize="16dp"
+                    android:paddingLeft="16dp"
+                    android:theme="@style/Theme.App.Edittext" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_line"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:background="@color/gray_4"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_4"
+                android:orientation="horizontal" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_top"
+        android:visibility="gone"
+        android:background="@color/transparent_black_1"
+        android:id="@+id/layout_loading"
+        >
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+</RelativeLayout>

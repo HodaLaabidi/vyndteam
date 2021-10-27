@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/blanch"
+    android:paddingTop="14dp"
+    android:paddingBottom="14dp"
+    android:foreground="?attr/selectableItemBackground">
+
+    <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+        android:id="@+id/iv_add_product"
+        android:layout_width="36dp"
+        android:layout_height="24dp"
+        android:paddingLeft="5dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="4dp"
+        android:src="@drawable/add_product"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_product"
+        android:textSize="16sp"
+        android:layout_toRightOf="@+id/iv_add_product"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/bleub"/>
+
+</RelativeLayout>

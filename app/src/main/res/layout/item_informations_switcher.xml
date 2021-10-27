@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/layout_switcher"
+    android:layout_height="60dp">
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+
+        <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+            android:src="@drawable/ic_image_placeholder"
+            android:id="@+id/img_infos_switcher"
+            android:layout_marginLeft="16dp"
+            android:gravity="center_vertical"
+            android:layout_width="36dp"
+            android:layout_height="36dp" />
+
+
+    <TextView
+        android:layout_marginLeft="15dp"
+        android:gravity="center_vertical"
+        android:text="principalInfo"
+        android:textColor="@color/blackTextColor"
+        android:id="@+id/text_info_switcher"
+        android:layout_width="160dp"
+        android:textSize="16sp"
+        android:layout_height="19dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Switch
+                android:id="@+id/switcher"
+                android:theme="@style/SwitchTheme"
+                android:layout_width="50dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="60dp"
+                android:checked="false" />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:paddingLeft="52dp"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/line_text_color"/>
+
+
+</LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:id="@+id/layout_happy_hour_discovery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        >
+
+        <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+            android:id="@+id/tv_day_name"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Lun"
+            android:textColor="@color/grey_light"
+            android:textSize="13sp"
+            app:fonttype="regular" />
+
+        <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+            android:id="@+id/tv_open_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_day_name"
+            android:layout_marginTop="7dp"
+            android:text="00:00"
+            android:textColor="@color/gray_3"
+            android:textSize="12sp"
+            app:fonttype="regular" />
+
+
+        <View
+            android:id="@+id/layout_no_happy_hour"
+            android:layout_width="6dp"
+            android:layout_height="0.8dp"
+            android:layout_below="@+id/tv_day_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:background="@color/gray_3"
+            android:visibility="visible" />
+
+
+        <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+            android:id="@+id/tv_close_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_open_time"
+            android:text="00:00"
+            android:textColor="@color/gray_3"
+            android:textSize="12sp"
+            app:fonttype="regular" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

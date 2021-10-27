@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.vyndsolutions.vyndteam.activities.AdressActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="center_vertical"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/ic_return_address"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="19dp"
+            android:src="@drawable/ic_return" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Localisation"
+            android:textColor="@color/text_white_color"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/rounded_edittext">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:id="@+id/tv_adresse"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:textColor="@color/blackTextColor"
+            android:text="Adresse"/>
+
+
+        <AutoCompleteTextView
+            android:id="@+id/commerceAdressee"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/tv_adresse"
+            android:hint="Adresse ou nom du commerce"
+            android:inputType="text"
+            android:imeOptions="actionGo"
+            android:textColor="@color/blackTextColor"
+            android:textColorHint="@color/grey_text_color"
+            android:textSize="16sp"
+            android:theme="@style/Theme.App.Edittext" />
+
+        <ImageView
+            android:id="@+id/iv_location_found"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="19dp"
+            android:src="@drawable/text_warning_icon" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/layout_chose_direct_carte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_commerce_adresse"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="@color/colorPrimary">
+        <ImageView
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_finger"
+            android:id="@+id/iv_finger"
+            />
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_toRightOf="@+id/iv_finger"
+            android:layout_marginLeft="8dp"
+            android:layout_centerVertical="true"
+            android:text="@string/indication_location"
+            android:id="@+id/lbl_indication_location"/>
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:background="@drawable/close"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="12dp"
+            />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey_line" />
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/mapfragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MapsActivity" />
+
+    <RelativeLayout
+
+        android:layout_width="328dp"
+        android:layout_height="88dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="-120dp">
+
+            <LinearLayout
+
+                android:background="@drawable/rounded_edittext"
+                android:layout_width="328dp"
+                android:layout_height="39dp">
+
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/img_search"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="16dp"
+                    android:src="@drawable/ic_search_orange" />
+                <fragment
+                    android:name="com.google.android.gms.location.places.ui.SupportPlaceAutocompleteFragment"
+                    android:layout_width="300dp"
+                    android:layout_gravity="center_vertical"
+                    android:theme="@style/Theme.App.Edittext"
+                    android:id="@+id/place_autocomplete_fragment"
+                    android:textColorHint="@color/grey_text_color"
+                    android:layout_height="24dp" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:layout_alignParentBottom="true"
+                android:id="@+id/rl_my_position"
+                android:layout_width="328dp"
+                android:layout_height="39dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/button_map"
+                android:gravity="center"
+                android:text="Prendre ma position"
+                android:textAllCaps="false"
+                android:textColor="@drawable/text_button_color" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_direct_carte"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_alignParentRight="true"
+
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:paddingLeft="17dp"
+            android:paddingRight="17dp"
+            android:paddingTop="10dp"
+            android:id="@+id/rl_direct_carte">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_centerInParent="true"
+                android:textColor="@color/colorPrimary"
+                android:text="Choisir directement sur la carte" />
+
+        </RelativeLayout>
+    </LinearLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+</LinearLayout>

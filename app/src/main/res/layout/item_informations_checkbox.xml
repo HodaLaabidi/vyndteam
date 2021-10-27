@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/layout_checkbox"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:gravity="center_vertical">
+    <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+        android:layout_marginLeft="21dp"
+        android:id="@+id/image_important_infos"
+        android:src="@drawable/ic_image_placeholder"
+        android:layout_width="24dp"
+        android:layout_height="24dp" />
+    
+    <LinearLayout
+        android:layout_marginLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_toLeftOf="@+id/ln_check"
+        android:layout_toRightOf="@+id/image_important_infos"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/text_important_infos"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="importantInfo"
+            android:textColor="@color/blackTextColor"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ln_check"
+        android:layout_marginLeft="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp">
+    <android.support.v7.widget.AppCompatCheckBox
+        android:layout_width="26dp"
+        android:checked="false"
+        android:id="@+id/checkbox"
+
+        android:layout_height="24dp" />
+    </LinearLayout>
+
+</RelativeLayout>

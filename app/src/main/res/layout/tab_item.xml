@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tab_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <android.support.design.widget.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backGreyViewPager">
+
+        <android.support.design.widget.TabItem
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/tab_text"
+            android:text="text" />
+
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tab_icon"
+            android:icon="@drawable/business_icon"/>
+
+
+    </android.support.design.widget.TabLayout>
+
+</LinearLayout>

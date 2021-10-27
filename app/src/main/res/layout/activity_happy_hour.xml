@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/gray_0"
+    android:layout_height="match_parent"
+    tools:context="com.vyndsolutions.vyndteam.activities.HappyHourActivity">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_happy_hours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        ></android.support.v7.widget.RecyclerView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:background="@color/colorPrimary">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:baselineAligned="false"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+
+
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_weight="0.5"
+
+                        >
+
+                        <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                            android:id="@+id/iv_back"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:paddingBottom="5dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="5dp"
+
+                            android:foreground="?attr/selectableItemBackground"
+                            android:src="@drawable/ic_back" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1">
+
+                        <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="@string/happyhours"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            app:fonttype="bold" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_weight="0.5"
+
+                        >
+
+                        <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                            android:id="@+id/iv_edit"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:paddingBottom="5dp"
+                            android:paddingTop="5dp"
+                            android:paddingLeft="5dp"
+
+                            android:foreground="?attr/selectableItemBackground"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/edit" />
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </android.support.v7.widget.Toolbar>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:layout_alignParentTop="true"
+                android:visibility="gone"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:baselineAligned="false"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+
+
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_weight="0.5"
+
+                        ><com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_back"
+                        android:id="@+id/iv_back_update"/>
+
+                    </RelativeLayout>
+
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_weight="0.5"
+
+                        >
+                        <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sauvgarder"
+                            android:textAllCaps="true"
+                            app:fonttype="regular"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:layout_centerInParent="true"
+                            android:gravity="end|center"
+                            android:id="@+id/tv_save"/>
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </android.support.v7.widget.Toolbar>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/layout_empty_happy_hour"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/layout_add_happy_hour"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="@string/empty_happy_hour"
+                android:textColor="@color/bleub"
+                android:textSize="18sp"
+                app:fonttype="regular"
+
+                />
+
+            <RelativeLayout
+                android:id="@+id/layout_add_happy_hour"
+                android:layout_width="260dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shapeorange">
+
+                <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="@string/add_empty_happy_hour"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:id="@+id/rl_layout_add_happy_hour"
+            >
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layout_happy_hours_add">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="11dp"
+                        android:background="@color/white">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_toLeftOf="@+id/cb_lundi">
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_lundi"
+                                android:layout_width="74dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:text="Lundi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_de_lundi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="45dp"
+                                android:layout_toRightOf="@+id/lbl_lundi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="de" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_de_time_lundi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@+id/lbl_de_lundi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="18:00" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_a_lundi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@+id/lbl_de_time_lundi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="à" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_a_time_lundi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@+id/lbl_a_lundi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="21:00" />
+                        </RelativeLayout>
+
+                        <CheckBox
+
+                            android:id="@+id/cb_lundi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:theme="@style/CheckBoxGray"
+                            android:layout_marginRight="16dp" />
+
+                        <com.vyndsolutions.vyndteam.utils.TextStyle.LatoEditText
+                            android:id="@+id/et_lundi_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cb_lundi"
+                            android:layout_marginLeft="16dp"
+                            android:enabled="false"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/bg_edit_text_white"
+                            android:gravity="start"
+                            android:hint="@string/descriptiontext"
+                            android:minHeight="42dp"
+                            android:paddingBottom="12dp"
+                            android:paddingLeft="3dp"
+                            android:paddingTop="3dp"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray_2"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="11dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/white">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_toLeftOf="@+id/cb_mardi">
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_mardi"
+                                android:layout_width="74dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="Mardi" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_de_mardi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="45dp"
+                                android:layout_toRightOf="@+id/lbl_mardi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="de" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_de_time_mardi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@+id/lbl_de_mardi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="18:00" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_a_mardi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@+id/lbl_de_time_mardi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="à" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_a_time_mardi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@+id/lbl_a_mardi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="21:00" />
+                        </RelativeLayout>
+
+                        <CheckBox
+                            android:id="@+id/cb_mardi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:theme="@style/CheckBoxGray"
+                            android:layout_marginRight="16dp" />
+
+                        <com.vyndsolutions.vyndteam.utils.TextStyle.LatoEditText
+                            android:id="@+id/et_mardi_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cb_mardi"
+                            android:layout_marginLeft="16dp"
+                            android:enabled="false"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/bg_edit_text_white"
+                            android:gravity="start"
+                            android:hint="@string/descriptiontext"
+                            android:minHeight="42dp"
+                            android:paddingBottom="12dp"
+                            android:paddingLeft="3dp"
+                            android:paddingTop="3dp"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray_2"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="11dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/white">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_toLeftOf="@+id/cb_mercredi">
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_mercredi"
+                                android:layout_width="74dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="Mercredi" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_de_mercredi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="45dp"
+                                android:layout_toRightOf="@+id/lbl_mercredi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="de" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_de_time_mercredi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@+id/lbl_de_mercredi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="18:00" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_a_mercredi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@+id/lbl_de_time_mercredi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="à" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_a_time_mercredi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@+id/lbl_a_mercredi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="21:00" />
+                        </RelativeLayout>
+
+                        <CheckBox
+                            android:id="@+id/cb_mercredi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:theme="@style/CheckBoxGray"
+                            android:layout_marginRight="16dp" />
+
+                        <com.vyndsolutions.vyndteam.utils.TextStyle.LatoEditText
+                            android:id="@+id/et_mercredi_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cb_mercredi"
+                            android:layout_marginLeft="16dp"
+                            android:enabled="false"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/bg_edit_text_white"
+                            android:gravity="start"
+                            android:hint="@string/descriptiontext"
+                            android:minHeight="42dp"
+                            android:paddingBottom="12dp"
+                            android:paddingLeft="3dp"
+                            android:paddingTop="3dp"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray_2"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="11dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/white">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_toLeftOf="@+id/cb_jeudi">
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_jeudi"
+                                android:layout_width="74dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="Jeudi" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_de_jeudi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="45dp"
+                                android:layout_toRightOf="@+id/lbl_jeudi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="de" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_de_time_jeudi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@+id/lbl_de_jeudi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="18:00" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_a_jeudi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@+id/lbl_de_time_jeudi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="à" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_a_time_jeudi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@+id/lbl_a_jeudi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="21:00" />
+                        </RelativeLayout>
+
+                        <CheckBox
+                            android:id="@+id/cb_jeudi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:theme="@style/CheckBoxGray"
+                            android:layout_marginRight="16dp" />
+
+                        <com.vyndsolutions.vyndteam.utils.TextStyle.LatoEditText
+                            android:id="@+id/et_jeudi_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cb_jeudi"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="6dp"
+                            android:enabled="false"
+                            android:background="@drawable/bg_edit_text_white"
+                            android:gravity="start"
+                            android:hint="@string/descriptiontext"
+                            android:minHeight="42dp"
+                            android:paddingBottom="12dp"
+                            android:paddingLeft="3dp"
+                            android:paddingTop="3dp"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray_2"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="11dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/white">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_toLeftOf="@+id/cb_vendredi">
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_vendredi"
+                                android:layout_width="74dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="Vendredi" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_de_vendredi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="45dp"
+                                android:layout_toRightOf="@+id/lbl_vendredi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="de" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_de_time_vendredi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@+id/lbl_de_vendredi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="18:00" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_a_vendredi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@+id/lbl_de_time_vendredi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="à" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_a_time_vendredi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@+id/lbl_a_vendredi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="21:00" />
+                        </RelativeLayout>
+
+                        <CheckBox
+                            android:id="@+id/cb_vendredi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:theme="@style/CheckBoxGray"
+                            android:layout_marginRight="16dp" />
+
+                        <com.vyndsolutions.vyndteam.utils.TextStyle.LatoEditText
+                            android:id="@+id/et_vendredi_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cb_vendredi"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="6dp"
+                            android:enabled="false"
+                            android:background="@drawable/bg_edit_text_white"
+                            android:gravity="start"
+                            android:hint="@string/descriptiontext"
+                            android:minHeight="42dp"
+                            android:paddingBottom="12dp"
+                            android:paddingLeft="3dp"
+                            android:paddingTop="3dp"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray_2"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="11dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/white">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_toLeftOf="@+id/cb_samedi">
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_samedi"
+                                android:layout_width="74dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="Samedi" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_de_samedi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="45dp"
+                                android:layout_toRightOf="@+id/lbl_samedi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="de" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_de_time_samedi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@+id/lbl_de_samedi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="18:00" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_a_samedi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@+id/lbl_de_time_samedi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="à" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_a_time_samedi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@+id/lbl_a_samedi"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="21:00" />
+                        </RelativeLayout>
+
+                        <CheckBox
+                            android:id="@+id/cb_samedi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:theme="@style/CheckBoxGray"
+                            android:layout_marginRight="16dp" />
+
+                        <com.vyndsolutions.vyndteam.utils.TextStyle.LatoEditText
+                            android:id="@+id/et_samedi_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cb_samedi"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/bg_edit_text_white"
+                            android:gravity="start"
+                            android:enabled="false"
+                            android:hint="@string/descriptiontext"
+                            android:minHeight="42dp"
+                            android:paddingBottom="12dp"
+                            android:paddingLeft="3dp"
+                            android:paddingTop="3dp"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray_2"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="11dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/white">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_toLeftOf="@+id/cb_dimanche">
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_dimanche"
+                                android:layout_width="74dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="Dimanche" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_de_dimanche"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="45dp"
+                                android:layout_toRightOf="@+id/lbl_dimanche"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="de" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_de_time_dimanche"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@+id/lbl_de_dimanche"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="18:00" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_a_dimanche"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@+id/lbl_de_time_dimanche"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="à" />
+
+                            <com.vyndsolutions.vyndteam.utils.TextStyle.LatoTextView
+                                android:id="@+id/lbl_a_time_dimanche"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@+id/lbl_a_dimanche"
+                                android:textColor="@color/gray_2"
+                                android:textSize="16sp"
+                                app:fonttype="bold"
+                                android:text="21:00" />
+                        </RelativeLayout>
+
+                        <CheckBox
+                            android:id="@+id/cb_dimanche"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:theme="@style/CheckBoxGray"
+                            android:layout_marginRight="16dp" />
+
+                        <com.vyndsolutions.vyndteam.utils.TextStyle.LatoEditText
+                            android:id="@+id/et_dimanche_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cb_dimanche"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/bg_edit_text_white"
+                            android:gravity="start"
+                            android:enabled="false"
+                            android:hint="@string/descriptiontext"
+                            android:minHeight="42dp"
+                            android:paddingBottom="12dp"
+                            android:paddingLeft="3dp"
+                            android:paddingTop="3dp"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray_2"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </RelativeLayout>
+
+    </LinearLayout>
+   
+        />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/progressBar"
+        android:visibility="gone"/>
+</RelativeLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:foreground="?attr/selectableItemBackground"
+
+    >
+
+  <LinearLayout
+      android:id="@+id/layout_product_item"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:paddingBottom="14dp"
+      android:paddingTop="14dp"
+      android:foreground="?attr/selectableItemBackground"
+      >
+      <RelativeLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="0.3"
+          android:id="@+id/rl_delete_product"
+          >
+          <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+              android:id="@+id/iv_delete_product"
+              android:layout_width="36dp"
+              android:layout_height="24dp"
+              android:layout_marginLeft="9dp"
+              android:paddingLeft="5dp"
+              android:src="@drawable/delete_icon_img"
+              />
+      </RelativeLayout>
+      <RelativeLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:layout_marginLeft="19dp">
+          <TextView
+              android:id="@+id/tv_product_name"
+
+              android:textSize="16sp"
+              tools:text="Element 1"
+              android:textColor="@color/blackTextColor"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content" />
+      </RelativeLayout>
+      <RelativeLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:layout_marginRight="22dp">
+          <TextView
+              android:id="@+id/tv_product_price"
+              android:layout_marginLeft="18dp"
+              android:textSize="16sp"
+              tools:text="16.5"
+              android:layout_toLeftOf="@+id/tv_product_devise"
+              android:textAlignment="textEnd"
+              android:textColor="@color/green"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:gravity="end" />
+          <TextView
+              android:id="@+id/tv_product_devise"
+              android:layout_marginLeft="4dp"
+              android:textAlignment="textEnd"
+              android:textSize="13sp"
+              android:text="DT"
+              android:layout_marginTop="2dp"
+
+              android:textColor="@color/green"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:gravity="end"
+              android:layout_alignParentRight="true"/>
+      </RelativeLayout>
+      <RelativeLayout
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="0.4"
+          android:id="@+id/rl_edit_product"
+          >
+          <com.vyndsolutions.vyndteam.widgets.images.NetworkImageView
+              android:id="@+id/iv_edit_product"
+              android:layout_alignParentRight="true"
+              android:layout_width="36dp"
+              android:layout_height="24dp"
+              android:paddingRight="10dp"
+              android:layout_marginRight="15dp"
+              android:src="@drawable/edit_gris"
+              android:gravity="end" />
+      </RelativeLayout>
+  </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
+    android:paddingTop="20dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="fonts/Lato-Bold"
+        android:text="@string/connectivity_gps_error_title"
+        android:textColor="@color/gray_2"
+        android:textSize="16sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="fonts/Lato-Regular"
+        android:gravity="center"
+        android:text="@string/connectivity_gps_error"
+        android:textColor="@color/blackTextColor"
+        android:textSize="14sp" />
+    <LinearLayout
+        android:id="@+id/layout_my_position"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/layout_active_gps"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+
+            android:id="@+id/rl_active_gps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/shapewithorangeborder"
+            android:paddingBottom="5dp"
+            android:paddingLeft="17dp"
+            android:paddingRight="17dp"
+            android:paddingTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="fonts/Lato-Regular"
+
+                android:text="Activer mon GPS"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

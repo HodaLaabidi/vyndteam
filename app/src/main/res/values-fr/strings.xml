@@ -1,0 +1,107 @@
+<resources>
+    <string name="app_name">VyndTeam-production</string>
+    <!--TODO: change all this strings in frensh version -->
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="email_adress"> Adresse Email</string>
+    <string name="password">Mot de passe</string>
+    <string name="button_login">Se connecter</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_search2">Search2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="connectivity_gps_error_title">Je n\'arrive pas à,te localiser!</string>
+    <string name="connectivity_gps_error">Veux-tu que je t\'aide à activer ton GPS?</string>
+    <string name="indication_location">Vous pouvez choisir directement la position sur la carte</string>
+    <string name="retry">réessayer</string>
+    <string name="connectivity_error">Je n\'arrive pas à me connecter à Internet!</string>
+    <string name="message_connectivity_error">Il faut vérifier ta connexion et réessayer encore une fois!</string>
+    <string name="business_notfound">Je crois que j\'ai oublié de lister le restaurant que tu viens de rechercher.Tu peux l\'ajouter par ici.</string>
+    <string name="add_business">Ajouter un restaurant</string>
+    <string name="photo">Photos</string>
+    <string name="add_product">Ajouter un produit</string>
+    <string name="add_categorie">+ Ajouter une catégorie</string>
+    <string name="update_titre_categorie">modifier le titre</string>
+    <string name="categorie">categorie</string>
+    <string name="menu">Menu</string>
+    <string name="sauvgarder">sauvegarder</string>
+    <string name="text">Texte</string>
+    <string name="photoo">Photo</string>
+    <string name="emptymenup1">Aucun menu sur Vynd!</string>
+    <string name="emptymenup2">Ajouter une catégorie</string>
+    <string name="emptymenupphoto">Ajouter une photo ici!</string>
+    <string name="add_photo_categorie">Ajouter une photo du menu</string>
+    <string name="title_no_result_found">Pas de résultat !</string>
+    <string name="title_no_result_found_nearby">Pas de commerce à coté !</string>
+    <string name="technical_error_title">Erreur technique</string>
+    <string name="technical_error">Erreur technique a cause du serveur.</string>
+    <string name="user_account_error">Erreur de connecxion à ce compte</string>
+    <string name="account_error">Vueillez insérer votre email et mot de passe une autre fois</string>
+    <string name="chargement_gerer"><![CDATA[<string name=\"chargement_gerer\">Vous êtes en mode hors connexion. Veuillez vous connecter puis réessayer</string>]]></string>
+    <string name="ressayer">Appuyer pour réessayer</string>
+    <string name="hors_connexion_mess">Vous êtes hors connexion internet</string>
+    <string name="message_delete_photo_success">Cette photo a été supprimé avec succès</string>
+    <string name="problem_image">Une erreur est survenue lors de la suppression de la photo</string>
+    <string name="problem_add_profile">Une erreur est survenue lors de l\ajout du commerce</string>
+    <string name="loading_progress_dialog">Chargement ...</string>
+    <string name="ttcategorie">Toutes les catégories</string>
+    <string name="retour">Retour</string>
+    <string name="button_confirm">Confirmer</string>
+    <string name="label_region">Région</string>
+    <string name="proximite">À PROXIMITÉ DE TOI</string>
+    <string name="aproximite">À PROXIMITÉ</string>
+    <string name="label_grand_tunis">Sur Le Grand Tunis</string>
+    <string name="label_biere">Bière</string>
+    <string name="price">Prix de la bière</string>
+    <string name="terminer">terminer</string>
+    <string name="label_nom">Nom</string>
+    <string name="label_categorie">Catégorie</string>
+    <string name="info_supp">Informations supplémentaire</string>
+    <string name="label_phone">Téléphone</string>
+    <string name="label_code_postal">Code postal</string>
+    <string name="label_description">Description</string>
+    <string name="lbl_nom_commerce">Nom du commerce</string>
+    <string name="dialog_title_slow_connection">Connexion trop lente</string>
+    <string name="dialog_message_slow_connection">On ne peut pas aller bien loin avec une connexion pareille. Impossible de charger les données. Réessayez dans une minute.</string>
+    <string name="info_general">Informations</string>
+    <string name="label_good_for">Bon pour</string>
+    <string name="horaire">Horaires</string>
+    <string name="information">Informations</string>
+    <string name="label_recommended_for">CONSEILLÉ POUR</string>
+    <string name="tags">Tags</string>
+    <string name="toast_saving">Enregistrement...</string>
+    <string name="near_you">À proximité de toi</string>
+
+    <string name="hint_autocomplete_region">Région</string>
+    <string name="hint_autocomplete_search">Un restaurant ou catégorie</string>
+    <string name="region_not_found">Cette région est introuvable</string>
+    <string name="no_result_found">Aucun résultat trouvé.</string>
+    <string name="erreur">Erreur</string>
+    <string name="verify_info">Vérifiez les informations</string>
+    <string name="happyhours">Happy hours</string>
+    <string name="empty_happy_hour">Vous n’avez aucun programme Happy Hour</string>
+    <string name="add_empty_happy_hour">Ajouter un happy hour</string>
+    <string name="descriptiontext">Description</string>
+    <string name="connexion">Se connecter</string>
+    <string name="valider">Valider</string>
+    <string name="verify_info_login">Vérifiez votre email ou votre mot de passe</string>
+    <string name="deconnexion">Déconnexion</string>
+    <string name="allCommerce">Tous les commerces</string>
+    <string name="emptyphoto">Aucune photo sur Vynd!</string>
+    <string name="addphoto">Ajouter une photo</string>
+    <string name="error_price">Le prix du produit n\est pas valide</string>
+    <string name="invalide_price">Veuillez entrer le prix du produit</string>
+    <string name="invalide_name">Veuillez entrer le nom du produit</string>
+    <string name="resto_name">Nom du restaurant</string>
+    <string name="restaurant">Restaurant</string>
+    <string name="quitter_withour_save">Quitter sans sauvegarder</string>
+
+
+</resources>
